@@ -18,7 +18,7 @@
 
 这种算法的优点是简单快速，不受图片大小缩放的影响，缺点是图片的内容不能变更。如果在图片上加几个文字，它就认不出来了。所以，它的最佳用途是根据缩略图，找出原图。
 
-代码可参考本项目[ImagePHash.java](https://github.com/nivance/image-similarity/blob/master/src/main/java/image/similarity/ImagePHash.java)。
+代码可参考本项目[ImagePHash.java](https://github.com/cyq5945/image-similarity/blob/master/src/main/java/image/similarity/ImagePHash.java)。
 
 实际应用中，往往采用更强大的[pHash](http://www.phash.org/)算法和[SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform)算法，它们能够识别图片的变形。只要变形程度不超过25%，它们就能匹配原图。这些算法虽然更复杂，但是原理与上面的简便算法是一样的，就是先将图片转化成Hash字符串，然后再进行比较。
 
@@ -35,7 +35,7 @@
 
 * 第二步：巴氏系数计算，计算公式如下：![](http://chart.googleapis.com/chart?cht=tx&chl=%5Crho%20(p%2C%20p%27)%3D%20%5Csum_%7Bi%3D1%7D%5EN%20%5Csqrt%7Bp(i)p%27(i)%7D)。其中p, p’分别代表源与候选的图像直方图数据，对每个相同i的数据点乘积开平方以后相加得出的结果即为图像相似度值（巴氏系数因子值），范围为0到1之间。
 
-代码可参考本项目[ImageHistogram.java](https://github.com/nivance/image-similarity/blob/master/src/main/java/image/similarity/ImageHistogram.java)。
+代码可参考本项目[ImageHistogram.java](https://github.com/cyq5945/image-similarity/blob/master/src/main/java/image/similarity/ImageHistogram.java)。
 
 --- 
 本项目的两种算法因为都存在一定的误判，所以可以两种方法结合在一起使用，提高准确率。
